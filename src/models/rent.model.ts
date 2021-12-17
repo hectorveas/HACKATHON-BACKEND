@@ -1,0 +1,30 @@
+import { Contract } from './contract.model';
+import { Payment } from './payment.model';
+import { User } from './user.model';
+import { Property } from './property.model';
+import { InfoUser } from "./info-user.model";
+
+export interface Rent { 
+  _id?: string;
+  property: string | Property;
+  lessee: string | User;
+  infoUser: InfoUser;
+  legalPersonSigner: boolean;
+  leaseTime: number;
+  transferDate: Date;
+  startDate: Date;
+  departureDate:  Date;
+  type: string;
+  storage: string;
+  itemsStoreCategory: string[];
+  subtotal: number;
+  comission: number;
+  totalPerMonth: number;
+  code?: string;
+  payments?: string[] | Payment[];
+  mailShippingContract?: string;
+  contract?: string | Contract;
+  state: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+};
